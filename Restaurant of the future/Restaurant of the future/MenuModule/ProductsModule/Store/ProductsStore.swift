@@ -11,21 +11,14 @@ import SwiftData
 
 typealias ProductsStore = ReduxStore<ProductsState, ProductsAction, ProductsEnvironment>
 
-//TODO: можно ли использовать @Query за пределами View не понял, поэтому такой колхозный вариант
-//из-за этого вызываю после каждого добавления/уддаления fetchItems() для обновления items и порядок скачет
+//TODO: можно ли использовать @Query за пределами View не понял, поэтому такой колхозный вариант c вызовом fetchItems() после модификации
 struct ProductsState {
-    private let modelContainer: ModelContainer
     private let modelContext: ModelContext
     var items: [CommonProduct] = .init()
     
     @MainActor
-    init() {
-        let schema = Schema([CommonProduct.self,])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-        
-        self.modelContainer = try! ModelContainer(for: schema, configurations: [modelConfiguration])
-        self.modelContext = modelContainer.mainContext
-        
+    init(modelContext: ModelContext) {
+        self.modelContext = modelContext
         self.fetchItems()
     }
     
@@ -43,7 +36,7 @@ struct ProductsState {
     
     mutating func fetchItems() {
         do {
-            items = try modelContext.fetch(FetchDescriptor<CommonProduct>())
+            items = try modelContext.fetch(FetchDescriptor<CommonProduct>()).sorted(by: { $0.timestamp < $1.timestamp})
         } catch {
             fatalError(error.localizedDescription)
         }

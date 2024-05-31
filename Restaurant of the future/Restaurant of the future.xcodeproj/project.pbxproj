@@ -22,6 +22,13 @@
 		FA39F8512C08941C000D0AE7 /* MainViewModuleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8502C08941C000D0AE7 /* MainViewModuleContentView.swift */; };
 		FA39F8532C089460000D0AE7 /* MainViewModelReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8522C089460000D0AE7 /* MainViewModelReducer.swift */; };
 		FA39F8552C089487000D0AE7 /* MainViewModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8542C089487000D0AE7 /* MainViewModelStore.swift */; };
+		FA39F85C2C0A199A000D0AE7 /* MapModuleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F85B2C0A199A000D0AE7 /* MapModuleReducer.swift */; };
+		FA39F85E2C0A1A01000D0AE7 /* MapModuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F85D2C0A1A01000D0AE7 /* MapModuleStore.swift */; };
+		FA39F8602C0A1A26000D0AE7 /* MapModuleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F85F2C0A1A26000D0AE7 /* MapModuleContentView.swift */; };
+		FA39F8622C0A2853000D0AE7 /* AnaliticsServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8612C0A2853000D0AE7 /* AnaliticsServise.swift */; };
+		FA39F8652C0A28D1000D0AE7 /* AnalyticsServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8642C0A28D1000D0AE7 /* AnalyticsServicing.swift */; };
+		FA39F8682C0A2A72000D0AE7 /* TestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8672C0A2A72000D0AE7 /* TestEvent.swift */; };
+		FA39F86A2C0A2FFB000D0AE7 /* CartContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8692C0A2FFB000D0AE7 /* CartContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +67,13 @@
 		FA39F8502C08941C000D0AE7 /* MainViewModuleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModuleContentView.swift; sourceTree = "<group>"; };
 		FA39F8522C089460000D0AE7 /* MainViewModelReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelReducer.swift; sourceTree = "<group>"; };
 		FA39F8542C089487000D0AE7 /* MainViewModelStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelStore.swift; sourceTree = "<group>"; };
+		FA39F85B2C0A199A000D0AE7 /* MapModuleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModuleReducer.swift; sourceTree = "<group>"; };
+		FA39F85D2C0A1A01000D0AE7 /* MapModuleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModuleStore.swift; sourceTree = "<group>"; };
+		FA39F85F2C0A1A26000D0AE7 /* MapModuleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModuleContentView.swift; sourceTree = "<group>"; };
+		FA39F8612C0A2853000D0AE7 /* AnaliticsServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsServise.swift; sourceTree = "<group>"; };
+		FA39F8642C0A28D1000D0AE7 /* AnalyticsServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServicing.swift; sourceTree = "<group>"; };
+		FA39F8672C0A2A72000D0AE7 /* TestEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEvent.swift; sourceTree = "<group>"; };
+		FA39F8692C0A2FFB000D0AE7 /* CartContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +182,7 @@
 		FA39F83B2C08672F000D0AE7 /* CartModule */ = {
 			isa = PBXGroup;
 			children = (
+				FA39F8692C0A2FFB000D0AE7 /* CartContentView.swift */,
 			);
 			path = CartModule;
 			sourceTree = "<group>";
@@ -175,6 +190,9 @@
 		FA39F83C2C08679F000D0AE7 /* MapModule */ = {
 			isa = PBXGroup;
 			children = (
+				FA39F85A2C0A1971000D0AE7 /* UI */,
+				FA39F8592C0A1965000D0AE7 /* Store */,
+				FA39F8582C0A194F000D0AE7 /* Reducer */,
 			);
 			path = MapModule;
 			sourceTree = "<group>";
@@ -182,6 +200,7 @@
 		FA39F83D2C0867FD000D0AE7 /* CoreModule */ = {
 			isa = PBXGroup;
 			children = (
+				FA39F8632C0A289A000D0AE7 /* Service */,
 				FA39F83F2C086996000D0AE7 /* MainReducer.swift */,
 			);
 			path = CoreModule;
@@ -261,6 +280,48 @@
 				FA39F8522C089460000D0AE7 /* MainViewModelReducer.swift */,
 			);
 			path = Reducer;
+			sourceTree = "<group>";
+		};
+		FA39F8582C0A194F000D0AE7 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				FA39F85B2C0A199A000D0AE7 /* MapModuleReducer.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		FA39F8592C0A1965000D0AE7 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				FA39F85D2C0A1A01000D0AE7 /* MapModuleStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		FA39F85A2C0A1971000D0AE7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FA39F85F2C0A1A26000D0AE7 /* MapModuleContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FA39F8632C0A289A000D0AE7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA39F8662C0A2A4B000D0AE7 /* Analitics */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FA39F8662C0A2A4B000D0AE7 /* Analitics */ = {
+			isa = PBXGroup;
+			children = (
+				FA39F8642C0A28D1000D0AE7 /* AnalyticsServicing.swift */,
+				FA39F8612C0A2853000D0AE7 /* AnaliticsServise.swift */,
+				FA39F8672C0A2A72000D0AE7 /* TestEvent.swift */,
+			);
+			path = Analitics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA39F8622C0A2853000D0AE7 /* AnaliticsServise.swift in Sources */,
 				FA39F8532C089460000D0AE7 /* MainViewModelReducer.swift in Sources */,
 				FA39F8102C0864FD000D0AE7 /* ContentView.swift in Sources */,
 				FA39F84A2C086DFA000D0AE7 /* ProductsContentView.swift in Sources */,
@@ -400,9 +462,15 @@
 				FA39F80E2C0864FD000D0AE7 /* Restaurant_of_the_futureApp.swift in Sources */,
 				FA39F8462C086BC8000D0AE7 /* ProductsReducer.swift in Sources */,
 				FA39F8402C086996000D0AE7 /* MainReducer.swift in Sources */,
+				FA39F8602C0A1A26000D0AE7 /* MapModuleContentView.swift in Sources */,
 				FA39F8552C089487000D0AE7 /* MainViewModelStore.swift in Sources */,
+				FA39F85E2C0A1A01000D0AE7 /* MapModuleStore.swift in Sources */,
 				FA39F8512C08941C000D0AE7 /* MainViewModuleContentView.swift in Sources */,
+				FA39F86A2C0A2FFB000D0AE7 /* CartContentView.swift in Sources */,
+				FA39F8682C0A2A72000D0AE7 /* TestEvent.swift in Sources */,
+				FA39F85C2C0A199A000D0AE7 /* MapModuleReducer.swift in Sources */,
 				FA39F8482C086BE5000D0AE7 /* ProductsStore.swift in Sources */,
+				FA39F8652C0A28D1000D0AE7 /* AnalyticsServicing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

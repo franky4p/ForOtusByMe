@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainViewModuleContentView: View {
     @EnvironmentObject var store: MainViewModuleStore
+    @Binding var selectedTab: String
     
     var body: some View {
         VStack {
@@ -16,9 +17,18 @@ struct MainViewModuleContentView: View {
             Text("Добро пожаловать")
                 .font(.largeTitle)
             Spacer()
-            Button(action: { store.send(.tapButton) }) {
+            Button(action: {
+                selectedTab = "Menu"
+                store.send(.tapButton)
+            }) {
                 Text("Погнали")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .font(.largeTitle)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                    .foregroundStyle(.black)
+                    .background(.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding(16)
             }
             Spacer()
         }
@@ -26,5 +36,5 @@ struct MainViewModuleContentView: View {
 }
 
 #Preview {
-    MainViewModuleContentView()
+    MainViewModuleContentView(selectedTab: .constant("Menu"))
 }

@@ -9,36 +9,43 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @State private var selectedTab = "Main"
+    
     var body: some View {
-        TabView(selection: /*@START_MENU_TOKEN@*/.constant(1)/*@END_MENU_TOKEN@*/, content: {
-            MainViewModuleContentView()
+        TabView(selection: $selectedTab) {
+            MainViewModuleContentView(selectedTab: $selectedTab)
                 .environmentObject(getMainViewModuleStore())
                 .tabItem {
                     Label("Главная", systemImage: "clipboard")
-                }.tag(1)
+                }.tag("Main")
             ProductsContentView()
                 .environmentObject(getProductStore())
                 .tabItem {
                     Label("Menu", systemImage: "menucard")
-                }.tag(2)
-            Text("Тут будет карта")
+                }.tag("Menu")
+            MapModuleContentView()
+                .environmentObject(getMapStore())
                 .tabItem {
                     Label("Карта", systemImage: "map")
-                }.tag(3)
-            Text("Тут будет корзина")
+                }.tag("Map")
+            CartContentView()
                 .tabItem {
                     Label("Корзина", systemImage: "cart")
-                }.tag(4)
-        })
+                }.tag("Cart")
+        }
     }
     
     @MainActor 
     private func getProductStore() -> ProductsStore {
-        ProductsStore(initialState: .init(), reducer: productsReducer, environment: .init())
+        ProductsStore(initialState: .init(modelContext: Restaurant_of_the_futureApp.commonStorage), reducer: productsReducer, environment: .init())
     }
     
     private func getMainViewModuleStore() -> MainViewModuleStore {
         MainViewModuleStore(initialState: .init(), reducer: mainViewModuleReducer, environment: .init())
+    }
+    
+    private func getMapStore() -> MapStore {
+        MapStore(initialState: .init(), reducer: mapModuleReducer, environment: .init(analiticService: Restaurant_of_the_futureApp.analiticServise))
     }
 }
 

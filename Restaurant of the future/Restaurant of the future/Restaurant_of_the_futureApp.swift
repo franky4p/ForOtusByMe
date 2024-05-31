@@ -10,6 +10,21 @@ import SwiftData
 
 @main
 struct Restaurant_of_the_futureApp: App {
+    
+    @MainActor
+    static var commonStorage: ModelContext {
+        let schema = Schema([CommonProduct.self,])
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        
+        let modelContainer = try! ModelContainer(for: schema, configurations: [modelConfiguration])
+        
+        return modelContainer.mainContext
+    }
+    
+    static var analiticServise: AnalyticsServicing {
+        AnalyticsService()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

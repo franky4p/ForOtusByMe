@@ -54,6 +54,6 @@ struct ProductsContentView: View {
 
 #Preview {
     ProductsContentView()
-        .environmentObject(ProductsStore(initialState: .init(), reducer: productsReducer, environment: .init()))
+        .environmentObject(ProductsStore(initialState: .init(modelContext: Restaurant_of_the_futureApp.commonStorage), reducer: productsReducer, environment: .init()))
         
 }
