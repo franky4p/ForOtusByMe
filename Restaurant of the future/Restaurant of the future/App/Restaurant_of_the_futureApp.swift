@@ -24,10 +24,14 @@ struct Restaurant_of_the_futureApp: App {
     static var analiticServise: AnalyticsServicing {
         AnalyticsService()
     }
-    
+
+    static var router: Router {
+        Router()
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainContentView()
         }
     }
 }
