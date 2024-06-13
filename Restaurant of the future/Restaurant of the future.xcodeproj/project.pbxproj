@@ -29,6 +29,16 @@
 		FA39F8652C0A28D1000D0AE7 /* AnalyticsServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8642C0A28D1000D0AE7 /* AnalyticsServicing.swift */; };
 		FA39F8682C0A2A72000D0AE7 /* TestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8672C0A2A72000D0AE7 /* TestEvent.swift */; };
 		FA39F86A2C0A2FFB000D0AE7 /* CartContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39F8692C0A2FFB000D0AE7 /* CartContentView.swift */; };
+		FA68EF5A2C185A3D000B05E8 /* ProductModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF592C185A3D000B05E8 /* ProductModuleOutput.swift */; };
+		FA68EF5C2C185AE3000B05E8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF5B2C185AE3000B05E8 /* Router.swift */; };
+		FA68EF5E2C185B22000B05E8 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF5D2C185B22000B05E8 /* Route.swift */; };
+		FA68EF612C1860C6000B05E8 /* MainModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF602C1860C6000B05E8 /* MainModuleOutput.swift */; };
+		FA68EF642C18977F000B05E8 /* MapModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF632C18977F000B05E8 /* MapModuleOutput.swift */; };
+		FA68EF6C2C18B1E4000B05E8 /* UserSettingsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF6B2C18B1E4000B05E8 /* UserSettingsContentView.swift */; };
+		FA68EF6E2C18B213000B05E8 /* UserSettingsModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF6D2C18B213000B05E8 /* UserSettingsModuleOutput.swift */; };
+		FA68EF702C18B243000B05E8 /* UserSettingsModuleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF6F2C18B243000B05E8 /* UserSettingsModuleReducer.swift */; };
+		FA68EF722C18B265000B05E8 /* UserSettingsModuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF712C18B265000B05E8 /* UserSettingsModuleStore.swift */; };
+		FA68EF742C18B8A9000B05E8 /* StoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF732C18B8A9000B05E8 /* StoreHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +84,16 @@
 		FA39F8642C0A28D1000D0AE7 /* AnalyticsServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsServicing.swift; sourceTree = "<group>"; };
 		FA39F8672C0A2A72000D0AE7 /* TestEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEvent.swift; sourceTree = "<group>"; };
 		FA39F8692C0A2FFB000D0AE7 /* CartContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartContentView.swift; sourceTree = "<group>"; };
+		FA68EF592C185A3D000B05E8 /* ProductModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModuleOutput.swift; sourceTree = "<group>"; };
+		FA68EF5B2C185AE3000B05E8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FA68EF5D2C185B22000B05E8 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		FA68EF602C1860C6000B05E8 /* MainModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleOutput.swift; sourceTree = "<group>"; };
+		FA68EF632C18977F000B05E8 /* MapModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModuleOutput.swift; sourceTree = "<group>"; };
+		FA68EF6B2C18B1E4000B05E8 /* UserSettingsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsContentView.swift; sourceTree = "<group>"; };
+		FA68EF6D2C18B213000B05E8 /* UserSettingsModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsModuleOutput.swift; sourceTree = "<group>"; };
+		FA68EF6F2C18B243000B05E8 /* UserSettingsModuleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsModuleReducer.swift; sourceTree = "<group>"; };
+		FA68EF712C18B265000B05E8 /* UserSettingsModuleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsModuleStore.swift; sourceTree = "<group>"; };
+		FA68EF732C18B8A9000B05E8 /* StoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +124,10 @@
 		FA39F8012C0864FD000D0AE7 = {
 			isa = PBXGroup;
 			children = (
+				FA39F80B2C0864FD000D0AE7 /* Products */,
 				FA39F80C2C0864FD000D0AE7 /* Restaurant of the future */,
 				FA39F81F2C086508000D0AE7 /* Restaurant of the futureTests */,
 				FA39F8292C086508000D0AE7 /* Restaurant of the futureUITests */,
-				FA39F80B2C0864FD000D0AE7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,14 +144,15 @@
 		FA39F80C2C0864FD000D0AE7 /* Restaurant of the future */ = {
 			isa = PBXGroup;
 			children = (
-				FA39F80D2C0864FD000D0AE7 /* Restaurant_of_the_futureApp.swift */,
-				FA39F83D2C0867FD000D0AE7 /* CoreModule */,
-				FA39F83C2C08679F000D0AE7 /* MapModule */,
-				FA39F83B2C08672F000D0AE7 /* CartModule */,
-				FA39F83A2C086714000D0AE7 /* MenuModule */,
-				FA39F8392C0866E2000D0AE7 /* MainModule */,
+				FA68EF652C189E01000B05E8 /* App */,
 				FA39F8132C086508000D0AE7 /* Assets.xcassets */,
+				FA39F83B2C08672F000D0AE7 /* CartModule */,
+				FA39F83D2C0867FD000D0AE7 /* CoreModule */,
+				FA39F8392C0866E2000D0AE7 /* MainModule */,
+				FA39F83C2C08679F000D0AE7 /* MapModule */,
+				FA39F83A2C086714000D0AE7 /* MenuModule */,
 				FA39F8152C086508000D0AE7 /* Preview Content */,
+				FA68EF662C18B171000B05E8 /* UserSettingsModule */,
 			);
 			path = "Restaurant of the future";
 			sourceTree = "<group>";
@@ -165,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				FA39F84C2C089392000D0AE7 /* MainViewModel */,
-				FA39F80F2C0864FD000D0AE7 /* ContentView.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -190,6 +210,7 @@
 		FA39F83C2C08679F000D0AE7 /* MapModule */ = {
 			isa = PBXGroup;
 			children = (
+				FA68EF622C189761000B05E8 /* Router */,
 				FA39F85A2C0A1971000D0AE7 /* UI */,
 				FA39F8592C0A1965000D0AE7 /* Store */,
 				FA39F8582C0A194F000D0AE7 /* Reducer */,
@@ -202,6 +223,9 @@
 			children = (
 				FA39F8632C0A289A000D0AE7 /* Service */,
 				FA39F83F2C086996000D0AE7 /* MainReducer.swift */,
+				FA68EF5B2C185AE3000B05E8 /* Router.swift */,
+				FA68EF732C18B8A9000B05E8 /* StoreHelper.swift */,
+				FA68EF5D2C185B22000B05E8 /* Route.swift */,
 			);
 			path = CoreModule;
 			sourceTree = "<group>";
@@ -209,6 +233,7 @@
 		FA39F8412C086B08000D0AE7 /* ProductsModule */ = {
 			isa = PBXGroup;
 			children = (
+				FA68EF582C185A12000B05E8 /* Router */,
 				FA39F8442C086B51000D0AE7 /* UI */,
 				FA39F8432C086B42000D0AE7 /* Store */,
 				FA39F8422C086B29000D0AE7 /* Reducer */,
@@ -251,6 +276,7 @@
 		FA39F84C2C089392000D0AE7 /* MainViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FA68EF5F2C186096000B05E8 /* Router */,
 				FA39F84F2C0893CE000D0AE7 /* Reducer */,
 				FA39F84E2C0893C3000D0AE7 /* Store */,
 				FA39F84D2C0893B8000D0AE7 /* UI */,
@@ -322,6 +348,82 @@
 				FA39F8672C0A2A72000D0AE7 /* TestEvent.swift */,
 			);
 			path = Analitics;
+			sourceTree = "<group>";
+		};
+		FA68EF582C185A12000B05E8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA68EF592C185A3D000B05E8 /* ProductModuleOutput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA68EF5F2C186096000B05E8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA68EF602C1860C6000B05E8 /* MainModuleOutput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA68EF622C189761000B05E8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA68EF632C18977F000B05E8 /* MapModuleOutput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA68EF652C189E01000B05E8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA39F80F2C0864FD000D0AE7 /* ContentView.swift */,
+				FA39F80D2C0864FD000D0AE7 /* Restaurant_of_the_futureApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FA68EF662C18B171000B05E8 /* UserSettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				FA68EF6A2C18B1B3000B05E8 /* Reducer */,
+				FA68EF692C18B1A0000B05E8 /* Store */,
+				FA68EF682C18B195000B05E8 /* Router */,
+				FA68EF672C18B18D000B05E8 /* UI */,
+			);
+			path = UserSettingsModule;
+			sourceTree = "<group>";
+		};
+		FA68EF672C18B18D000B05E8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FA68EF6B2C18B1E4000B05E8 /* UserSettingsContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FA68EF682C18B195000B05E8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FA68EF6D2C18B213000B05E8 /* UserSettingsModuleOutput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA68EF692C18B1A0000B05E8 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				FA68EF712C18B265000B05E8 /* UserSettingsModuleStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		FA68EF6A2C18B1B3000B05E8 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				FA68EF6F2C18B243000B05E8 /* UserSettingsModuleReducer.swift */,
+			);
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,15 +562,25 @@
 				FA39F84A2C086DFA000D0AE7 /* ProductsContentView.swift in Sources */,
 				FA39F8122C0864FD000D0AE7 /* CommonProduct.swift in Sources */,
 				FA39F80E2C0864FD000D0AE7 /* Restaurant_of_the_futureApp.swift in Sources */,
+				FA68EF5C2C185AE3000B05E8 /* Router.swift in Sources */,
 				FA39F8462C086BC8000D0AE7 /* ProductsReducer.swift in Sources */,
 				FA39F8402C086996000D0AE7 /* MainReducer.swift in Sources */,
 				FA39F8602C0A1A26000D0AE7 /* MapModuleContentView.swift in Sources */,
 				FA39F8552C089487000D0AE7 /* MainViewModelStore.swift in Sources */,
+				FA68EF5A2C185A3D000B05E8 /* ProductModuleOutput.swift in Sources */,
+				FA68EF742C18B8A9000B05E8 /* StoreHelper.swift in Sources */,
+				FA68EF702C18B243000B05E8 /* UserSettingsModuleReducer.swift in Sources */,
+				FA68EF722C18B265000B05E8 /* UserSettingsModuleStore.swift in Sources */,
 				FA39F85E2C0A1A01000D0AE7 /* MapModuleStore.swift in Sources */,
+				FA68EF5E2C185B22000B05E8 /* Route.swift in Sources */,
+				FA68EF612C1860C6000B05E8 /* MainModuleOutput.swift in Sources */,
+				FA68EF642C18977F000B05E8 /* MapModuleOutput.swift in Sources */,
+				FA68EF6E2C18B213000B05E8 /* UserSettingsModuleOutput.swift in Sources */,
 				FA39F8512C08941C000D0AE7 /* MainViewModuleContentView.swift in Sources */,
 				FA39F86A2C0A2FFB000D0AE7 /* CartContentView.swift in Sources */,
 				FA39F8682C0A2A72000D0AE7 /* TestEvent.swift in Sources */,
 				FA39F85C2C0A199A000D0AE7 /* MapModuleReducer.swift in Sources */,
+				FA68EF6C2C18B1E4000B05E8 /* UserSettingsContentView.swift in Sources */,
 				FA39F8482C086BE5000D0AE7 /* ProductsStore.swift in Sources */,
 				FA39F8652C0A28D1000D0AE7 /* AnalyticsServicing.swift in Sources */,
 			);

@@ -14,9 +14,12 @@ struct MapState {
 }
 
 enum MapAction {
+    case showDetailSheet
     case showDetails
+    case close
 }
 
 struct MapEnvironment {
+    var router: MapModuleOutput
     var analiticService: AnalyticsServicing
 }

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol MainModuleOutput {
+    func goToMenu()
+    func openSettings()
+}

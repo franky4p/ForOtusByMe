@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol MapModuleOutput {
+    func openDetails() 
+    func dismiss()
+}

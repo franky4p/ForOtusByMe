@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
+
+typealias UserSettingsModuleStore = ReduxStore<UserSettingsModuleState, UserSettingsModuleAction, UserSettingsModuleEnvironment>
+
+struct UserSettingsModuleState {
+   
+}
+
+enum UserSettingsModuleAction {
+    case tapCloseSettings
+}
+
+struct UserSettingsModuleEnvironment {
+    let router: UserSettingsModuleOutput
+}

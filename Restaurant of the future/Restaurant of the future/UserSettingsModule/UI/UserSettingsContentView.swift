@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct UserSettingsContentView: View {
+    @EnvironmentObject var store: UserSettingsModuleStore
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            .padding()
+        Button("Exit") {
+            withAnimation {
+                store.send(.tapCloseSettings)
+            }
+            
+        }
     }
 }
 

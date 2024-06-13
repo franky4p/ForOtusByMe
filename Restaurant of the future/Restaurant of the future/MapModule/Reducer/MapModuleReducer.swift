@@ -11,7 +11,11 @@ import Combine
 func mapModuleReducer(state: inout MapState, action: MapAction, environment: MapEnvironment) -> AnyPublisher<MapAction, Never> {
     switch action {
     case .showDetails:
+        environment.router.openDetails()
+    case .showDetailSheet:
         environment.analiticService.logEvent(event: TestEvent())
+    case .close:
+        environment.router.dismiss()
     }
     
     return Combine.Empty().eraseToAnyPublisher()

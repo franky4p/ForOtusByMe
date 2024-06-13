@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import Combine
+
+func userSettingsModuleReducer(state: inout UserSettingsModuleState, action: UserSettingsModuleAction, environment: UserSettingsModuleEnvironment) -> AnyPublisher<UserSettingsModuleAction, Never> {
+    switch action {
+    case .tapCloseSettings:
+        environment.router.closeSettings()
+    }
+    
+    return Combine.Empty().eraseToAnyPublisher()
+}

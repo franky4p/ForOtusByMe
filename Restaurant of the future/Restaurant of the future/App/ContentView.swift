@@ -18,6 +18,12 @@ struct MainContentView: View {
                     router.view(for: route)
                 }
         }
+        .sheet(item: $router.presentingSheet) { route in
+            router.view(for: route)
+        }
+        .fullScreenCover(item: $router.presentingFullScreenCover) { route in
+            router.view(for: route)
+        }
         .environmentObject(router)
     }
 }
@@ -25,22 +31,21 @@ struct MainContentView: View {
 
 struct ContentView: View {
     @EnvironmentObject var router: Router
-    //@State private var selectedTab: SelectedTab = .main
-    
+
     var body: some View {
         TabView(selection: createTabViewBinding()) {
             MainViewModuleContentView()
-                .environmentObject(getMainViewModuleStore())
+                .environmentObject(StoreHelper.getMainViewModuleStore(router: router))
                 .tabItem {
                     Label("Главная", systemImage: "clipboard")
                 }.tag(SelectedTab.main)
             ProductsContentView()
-                .environmentObject(getProductStore())
+                .environmentObject(StoreHelper.getProductStore(router: router))
                 .tabItem {
                     Label("Menu", systemImage: "menucard")
                 }.tag(SelectedTab.menu)
             MapModuleContentView()
-                .environmentObject(getMapStore())
+                .environmentObject(StoreHelper.getMapStore(router: router))
                 .tabItem {
                     Label("Карта", systemImage: "map")
                 }.tag(SelectedTab.map)
@@ -51,25 +56,11 @@ struct ContentView: View {
                 }.tag(SelectedTab.cart)
         }
     }
-    
-    @MainActor 
-    private func getProductStore() -> ProductsStore {
-        ProductsStore(initialState: .init(modelContext: Restaurant_of_the_futureApp.commonStorage), reducer: productsReducer, environment: .init(router: router))
-    }
-    
-    private func getMainViewModuleStore() -> MainViewModuleStore {
-        MainViewModuleStore(initialState: .init(), reducer: mainViewModuleReducer, environment: .init(router: router))
-    }
-    
-    private func getMapStore() -> MapStore {
-        MapStore(initialState: .init(), reducer: mapModuleReducer, environment: .init(router: router, analiticService: Restaurant_of_the_futureApp.analiticServise))
-    }
-    
+
     private func createTabViewBinding() -> Binding<SelectedTab> {
         Binding<SelectedTab>(
             get: { router.selectedTab },
             set: { selectedTab in
-                print("tapped  \(selectedTab)")
                 if selectedTab == router.selectedTab {
                     print("tapped same tab")
                     
@@ -86,8 +77,11 @@ struct ContentView: View {
 //                    }
                 }
                 
-                // Make sure the new value is persisted.
-                router.selectedTab = selectedTab
+                if selectedTab == .map {
+                    router.presentingFullScreenCover = Route.map
+                } else {
+                    router.selectedTab = selectedTab
+                }
             }
         )
     }

@@ -13,12 +13,24 @@ struct MapModuleContentView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Spacer()
+                Button("X") {
+                    store.send(.close)
+                }.padding(.horizontal)
+            }
+            Spacer()
             Text("Когда нибудь здесь появится карта, а пока вот кнопка. Ее можно нажать")
                 .padding()
             Button("Нажми меня") {
                 isShowingDetails = true
+                store.send(.showDetailSheet)
+            }
+            
+            Button("Нажми меня полностью") {
                 store.send(.showDetails)
             }
+            Spacer()
         }.sheet(isPresented: $isShowingDetails) {
             DetailsView()
         }

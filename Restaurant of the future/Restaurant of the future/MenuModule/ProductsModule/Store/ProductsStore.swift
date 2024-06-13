@@ -49,5 +49,5 @@ enum ProductsAction {
 }
 
 struct ProductsEnvironment {
-    //для вызова каких-нибудь "внешних" сервисов
+    var router: ProductModuleOutput
 }

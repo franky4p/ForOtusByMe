@@ -9,32 +9,42 @@ import SwiftUI
 
 struct MainViewModuleContentView: View {
     @EnvironmentObject var store: MainViewModuleStore
-    @Binding var selectedTab: String
-    
+
     var body: some View {
-        VStack {
-            Spacer()
-            Text("Добро пожаловать")
-                .font(.largeTitle)
-            Spacer()
-            Button(action: {
-                selectedTab = "Menu"
-                store.send(.tapButton)
-            }) {
-                Text("Погнали")
+        NavigationView {
+            VStack {
+                Spacer()
+                Text("Добро пожаловать")
                     .font(.largeTitle)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .foregroundStyle(.black)
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding(16)
+                Spacer()
+                Button(action: {
+                    store.send(.tapButtonGoToMenu)
+                }) {
+                    Text("Погнали")
+                        .font(.largeTitle)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
+                        .foregroundStyle(.black)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding(16)
+                }
+                Spacer()
+            }.toolbar {
+                ToolbarItem {
+                    Image(systemName: "person.circle")
+                        .onTapGesture {
+                            withAnimation {
+                                store.send(.openSettings)
+                            }
+                        }
+                }
+                
             }
-            Spacer()
         }
     }
 }
 
 #Preview {
-    MainViewModuleContentView(selectedTab: .constant("Menu"))
+    MainViewModuleContentView()
 }
