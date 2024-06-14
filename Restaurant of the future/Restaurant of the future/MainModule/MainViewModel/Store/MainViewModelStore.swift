@@ -16,9 +16,10 @@ struct MainViewModuleState {
 }
 
 enum MainViewModuleAction {
-    case tapButton
+    case tapButtonGoToMenu
+    case openSettings
 }
 
 struct MainViewModuleEnvironment {
-    //для вызова каких-нибудь "внешних" сервисов
+    let router: MainModuleOutput
 }

@@ -10,11 +10,14 @@ import UIKit
 
 struct CartContentView: View {
     var body: some View {
-        VStack {
-            Text("Пример использования UIKit компонентов, надеюсь не пригодиться :)")
-                .padding()
-                .font(.title)
-            CartViewRepresentable(model: ModelTest(name: "Вот это вот все:", price: "100$"))
+        NavigationView {
+            VStack {
+                Text("Пример использования UIKit компонентов, надеюсь не пригодиться :)")
+                    .padding()
+                    .font(.title)
+                CartViewRepresentable(model: ModelTest(name: "Вот это вот все:", price: "100$"))
+            }
+            .navigationTitle("Корзина")
         }
     }
 }

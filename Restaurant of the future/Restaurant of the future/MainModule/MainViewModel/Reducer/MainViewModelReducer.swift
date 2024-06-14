@@ -10,8 +10,10 @@ import Combine
 
 func mainViewModuleReducer(state: inout MainViewModuleState, action: MainViewModuleAction, environment: MainViewModuleEnvironment) -> AnyPublisher<MainViewModuleAction, Never> {
     switch action {
-    case .tapButton:
-        print(#function)
+    case .tapButtonGoToMenu:
+        environment.router.goToMenu()
+    case .openSettings:
+        environment.router.openSettings()
     }
     
     return Combine.Empty().eraseToAnyPublisher()
