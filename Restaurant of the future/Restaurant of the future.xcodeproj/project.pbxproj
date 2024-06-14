@@ -39,6 +39,7 @@
 		FA68EF702C18B243000B05E8 /* UserSettingsModuleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF6F2C18B243000B05E8 /* UserSettingsModuleReducer.swift */; };
 		FA68EF722C18B265000B05E8 /* UserSettingsModuleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF712C18B265000B05E8 /* UserSettingsModuleStore.swift */; };
 		FA68EF742C18B8A9000B05E8 /* StoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF732C18B8A9000B05E8 /* StoreHelper.swift */; };
+		FA68EF762C1C74B0000B05E8 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68EF752C1C74B0000B05E8 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		FA68EF6F2C18B243000B05E8 /* UserSettingsModuleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsModuleReducer.swift; sourceTree = "<group>"; };
 		FA68EF712C18B265000B05E8 /* UserSettingsModuleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsModuleStore.swift; sourceTree = "<group>"; };
 		FA68EF732C18B8A9000B05E8 /* StoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHelper.swift; sourceTree = "<group>"; };
+		FA68EF752C1C74B0000B05E8 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,6 +381,7 @@
 			children = (
 				FA39F80F2C0864FD000D0AE7 /* ContentView.swift */,
 				FA39F80D2C0864FD000D0AE7 /* Restaurant_of_the_futureApp.swift */,
+				FA68EF752C1C74B0000B05E8 /* SplashScreen.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				FA68EF702C18B243000B05E8 /* UserSettingsModuleReducer.swift in Sources */,
 				FA68EF722C18B265000B05E8 /* UserSettingsModuleStore.swift in Sources */,
 				FA39F85E2C0A1A01000D0AE7 /* MapModuleStore.swift in Sources */,
+				FA68EF762C1C74B0000B05E8 /* SplashScreen.swift in Sources */,
 				FA68EF5E2C185B22000B05E8 /* Route.swift in Sources */,
 				FA68EF612C1860C6000B05E8 /* MainModuleOutput.swift in Sources */,
 				FA68EF642C18977F000B05E8 /* MapModuleOutput.swift in Sources */,

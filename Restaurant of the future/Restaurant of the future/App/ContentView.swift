@@ -9,22 +9,27 @@ import SwiftUI
 import SwiftData
 
 struct MainContentView: View {
-    @StateObject var router = Restaurant_of_the_futureApp.router
-    
+    @StateObject private var router = Restaurant_of_the_futureApp.router
+    @State private var loadingComplete: Bool = false
+
     var body: some View {
-        NavigationStack(path: $router.path) {
-            ContentView()
-                .navigationDestination(for: Route.self) { route in
-                    router.view(for: route)
-                }
+        if loadingComplete {
+            NavigationStack(path: $router.path) {
+                ContentView()
+                    .navigationDestination(for: Route.self) { route in
+                        router.view(for: route)
+                    }
+            }
+            .sheet(item: $router.presentingSheet) { route in
+                router.view(for: route)
+            }
+            .fullScreenCover(item: $router.presentingFullScreenCover) { route in
+                router.view(for: route)
+            }
+            .environmentObject(router)
+        } else {
+            SplashScreen(isActive: $loadingComplete)
         }
-        .sheet(item: $router.presentingSheet) { route in
-            router.view(for: route)
-        }
-        .fullScreenCover(item: $router.presentingFullScreenCover) { route in
-            router.view(for: route)
-        }
-        .environmentObject(router)
     }
 }
 
