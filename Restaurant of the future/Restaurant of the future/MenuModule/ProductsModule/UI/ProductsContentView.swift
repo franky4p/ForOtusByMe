@@ -21,6 +21,7 @@ struct ProductsContentView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
+                .id(ScrollAnchor.menu)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

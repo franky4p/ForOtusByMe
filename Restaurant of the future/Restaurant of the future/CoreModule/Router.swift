@@ -11,14 +11,15 @@ import SwiftUI
 final class Router: ObservableObject {
     @Published var selectedTab: SelectedTab = .main
     @Published var path: NavigationPath = NavigationPath()
+    @Published var settingsNavigation: NavigationPath = NavigationPath()
     @Published var presentingSheet: Route?
     @Published var presentingFullScreenCover: Route?
     
-    private func backToRoot() {
+    func backToRoot() {
         path.removeLast(path.count)
     }
     
-    private func back() {
+    func back() {
         path.removeLast()
     }
 
@@ -39,9 +40,10 @@ final class Router: ObservableObject {
             presentingFullScreenCover = nil
         }
     }
-    
-    // Builds the views
-    @ViewBuilder func view(for route: Route) -> some View {
+
+    @MainActor 
+    @ViewBuilder
+    func view(for route: Route) -> some View {
         switch route {
         case .map:
             MapModuleContentView()
@@ -51,7 +53,8 @@ final class Router: ObservableObject {
         case .cart:
             CartContentView()
         case .menu:
-            CartContentView()
+            ProductsContentView()
+                .environmentObject(StoreHelper.getProductStore(router: self))
         case .details:
             DetailsView()
         case .settings:
@@ -100,7 +103,7 @@ extension Router: MainModuleOutput {
 
 extension Router: MapModuleOutput {
     func openDetails() {
-        path.append(Route.details)
+        presentSheet(.details)
     }
 }
 

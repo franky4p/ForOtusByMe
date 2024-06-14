@@ -22,12 +22,15 @@ struct MapModuleContentView: View {
             Spacer()
             Text("Когда нибудь здесь появится карта, а пока вот кнопка. Ее можно нажать")
                 .padding()
-            Button("Нажми меня") {
+            Button("Открой шторку без роутера") {
                 isShowingDetails = true
-                store.send(.showDetailSheet)
+                store.send(.sendAnaliticShowDetailSheet)
             }
             
-            Button("Нажми меня полностью") {
+            //TODO: нужно доработать роутер ибо
+            //Currently, only presenting a single sheet is supported.
+            //The next sheet will be presented when the currently presented sheet gets dismissed.
+            Button("Открой шторку с роутером") {
                 store.send(.showDetails)
             }
             Spacer()

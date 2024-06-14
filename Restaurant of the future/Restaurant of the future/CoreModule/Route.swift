@@ -30,3 +30,7 @@ enum SelectedTab: String {
     case map
     case cart
 }
+
+enum ScrollAnchor {
+    case menu
+}

@@ -12,7 +12,7 @@ func mapModuleReducer(state: inout MapState, action: MapAction, environment: Map
     switch action {
     case .showDetails:
         environment.router.openDetails()
-    case .showDetailSheet:
+    case .sendAnaliticShowDetailSheet:
         environment.analiticService.logEvent(event: TestEvent())
     case .close:
         environment.router.dismiss()

@@ -14,7 +14,7 @@ struct MapState {
 }
 
 enum MapAction {
-    case showDetailSheet
+    case sendAnaliticShowDetailSheet
     case showDetails
     case close
 }
