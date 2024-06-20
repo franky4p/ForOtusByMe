@@ -10,4 +10,5 @@ import Foundation
 protocol MainModuleOutput {
     func goToMenu()
     func openSettings()
+    func goToBooksDetail(data: [String])
 }

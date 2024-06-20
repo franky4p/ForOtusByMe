@@ -17,6 +17,8 @@ enum Route: Hashable, Identifiable {
     case menu
     case map
     case details
+    case bookDetail([String])
+    case bookInfo(String)
     case settings
     
     func hash(into hasher: inout Hasher) {
