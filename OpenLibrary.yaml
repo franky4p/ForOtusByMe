@@ -1,0 +1,163 @@
+openapi: 3.0.2
+info:
+  title: Open Library API
+  version: 0.1.0
+  description: "- These are still in development and may not be perfect\n- Contribute
+    by proposing edits to [openapi.json](https://github.com/internetarchive/openlibrary/blob/master/static/openapi.json)\n-
+    Please do not use our APIs for bulk downloads, see [dev center](https://openlibrary.org/developers/api)
+    \n- (Warning!) As Swagger only contains a subset of the API, please see the API
+    pages in the developer's docs for the full set."
+servers:
+- url: https://openlibrary.org
+tags:
+- name: books
+  description: Retrieve a specific work or edition by identifier
+  externalDocs:
+    description: Find out more
+    url: https://openlibrary.org/dev/docs/api/books
+- name: search
+  description: Search results for books, authors, and more
+  externalDocs:
+    description: Find out more
+    url: https://openlibrary.org/dev/docs/api/search
+paths:
+  "/books/{olid}":
+    get:
+      summary: Read Books
+      operationId: booksGet
+      tags:
+      - books
+      parameters:
+      - name: olid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookResult'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/search.json":
+    get:
+      summary: Read Search
+      operationId: searchGet
+      tags:
+      - search
+      parameters:
+      - name: q
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: number of page
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResult'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+components:
+  schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            "$ref": "#/components/schemas/BackendError"
+    BackendError:
+      title: BackendError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            type: string
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    SearchResult:
+      type: object
+      properties:
+        numFound:
+          type: integer
+        start:
+          type: integer
+        docs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Doc'
+    Doc:
+      required:
+      - key
+      type: object
+      properties:
+        key:
+          type: string
+        author_name:
+          type: array
+          items:
+            type: string
+        first_publish_year:
+          type: integer
+        number_of_pages_median:
+          type: integer
+        title:
+          type: string
+        seed:
+          type: array
+          items:
+            type: string
+        format:
+          type: array
+          items:
+            type: string
+      x-swift-hashable: true
+    BookResult:
+      required:
+      - key
+      type: object
+      properties:
+        key:
+          type: string
+        title:
+          type: string
+        publish_date:
+          type: string
+        physical_format:
+          type: string
+        isbn_10:
+          type: array
+          items:
+            type: string
+      x-swift-hashable: true

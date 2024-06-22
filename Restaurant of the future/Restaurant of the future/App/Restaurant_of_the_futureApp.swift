@@ -25,6 +25,10 @@ struct Restaurant_of_the_futureApp: App {
         AnalyticsService()
     }
 
+    static var libraryService: NetLibraryServicing {
+        NetLibraryService()
+    }
+    
     static var router: Router {
         Router()
     }

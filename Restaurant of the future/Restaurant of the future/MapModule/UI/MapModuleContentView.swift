@@ -16,14 +16,23 @@ struct MapModuleContentView: View {
             HStack {
                 Spacer()
                 Button("X") {
-                    store.send(.close)
+                    var transaction = Transaction(animation: .none)
+                    transaction.disablesAnimations = true
+                    withTransaction(transaction) {
+                        store.send(.close)
+                    }
                 }.padding(.horizontal)
             }
             Spacer()
             Text("Когда нибудь здесь появится карта, а пока вот кнопка. Ее можно нажать")
                 .padding()
-            Button("Открой шторку без роутера") {
-                isShowingDetails = true
+            Button("Открой шторку без роутера и анимации") {
+                //FIXME: пример выключения стандартной анимации, срабатывает не с первого раза
+                var transaction = Transaction(animation: .none)
+                transaction.disablesAnimations = true
+                withTransaction(transaction) {
+                    isShowingDetails = true
+                }
                 store.send(.sendAnaliticShowDetailSheet)
             }
             
@@ -47,7 +56,13 @@ struct DetailsView: View {
         VStack {
             Text("Как-то так")
                 .padding()
-            Button("Понятно", action: dismiss.callAsFunction)
+            Button("Понятно") {
+                var transaction = Transaction(animation: .none)
+                transaction.disablesAnimations = true
+                withTransaction(transaction) {
+                    dismiss.callAsFunction()
+                }
+            }
         }
     }
 }

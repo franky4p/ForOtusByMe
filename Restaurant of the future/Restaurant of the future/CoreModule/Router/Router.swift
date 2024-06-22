@@ -23,11 +23,11 @@ final class Router: ObservableObject {
         path.removeLast()
     }
 
-    private func presentSheet(_ route: Route) {
+    func presentSheet(_ route: Route) {
         self.presentingSheet = route
     }
 
-    private func presentFullScreen(_ route: Route) {
+    func presentFullScreen(_ route: Route) {
         self.presentingFullScreenCover = route
     }
 
@@ -50,19 +50,31 @@ final class Router: ObservableObject {
                 .environmentObject(StoreHelper.getMapStore(router: self))
         case .product(let id):
             CartContentView()
+            
         case .cart:
             CartContentView()
+            
         case .menu:
             ProductsContentView()
                 .environmentObject(StoreHelper.getProductStore(router: self))
+            
         case .details:
             DetailsView()
+            
         case .settings:
             UserSettingsContentView()
                 .environmentObject(StoreHelper.getUserSettingsStore(router: self))
+            
         case .main:
             MainViewModuleContentView()
                 .environmentObject(StoreHelper.getMainViewModuleStore(router: self))
+            
+        case .bookDetail(let data):
+            DetailsBooksContentView()
+                .environmentObject(StoreHelper.getDetailsBookStore(router: self, data: data))
+        case .bookInfo(let key):
+            BooksInfoContentView()
+                .environmentObject(StoreHelper.getBooksInfoStore(router: self, key: key))
         }
     }
     
@@ -70,45 +82,5 @@ final class Router: ObservableObject {
         case push
         case sheet
         case fullScreenCover
-    }
-}
-
-extension Router: ProductModuleOutput {
-    func goTo() {
-        
-    }
-    
-    func showProduct(_ productId: Int64) {
-        path.append(Route.product(productId))
-    }
-    
-    func showMap() {
-        selectedTab = .map
-    }
-    
-    func showCart() {
-        selectedTab = .cart
-    }
-}
-
-extension Router: MainModuleOutput {
-    func openSettings() {
-        presentFullScreen(Route.settings)
-    }
-    
-    func goToMenu() {
-        selectedTab = .menu
-    }
-}
-
-extension Router: MapModuleOutput {
-    func openDetails() {
-        presentSheet(.details)
-    }
-}
-
-extension Router: UserSettingsModuleOutput {
-    func closeSettings() {
-        dismiss()
     }
 }
