@@ -13,6 +13,15 @@ func booksInfoReducer(state: inout BooksInfoState, action: BooksInfoAction, envi
     switch action {
     case .tapCell:
         environment.router.goToInfo()
+
+    case .loadDataFromBackend(data: let response):
+        state.loadContent(data: response)
+
+    case .fetchInfo:
+        return environment.libraryService.getBook(id: state.getKey())
+            .replaceError(with: BookResult(key: ""))
+            .map { BooksInfoAction.loadDataFromBackend(data: $0) }
+            .eraseToAnyPublisher()
     }
 
     return Combine.Empty().eraseToAnyPublisher()

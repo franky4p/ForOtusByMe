@@ -89,7 +89,7 @@ struct ContentView: View {
                         print("Not implimented")
                     }
                 }
-                
+
                 if selectedTab == .map {
                     router.presentingFullScreenCover = Route.map
                 } else {

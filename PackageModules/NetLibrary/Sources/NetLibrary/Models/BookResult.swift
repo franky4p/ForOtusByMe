@@ -16,12 +16,14 @@ public struct BookResult: Codable, JSONEncodable, Hashable {
     public var title: String?
     public var publishDate: String?
     public var physicalFormat: String?
+    public var isbn10: [String]?
 
-    public init(key: String, title: String? = nil, publishDate: String? = nil, physicalFormat: String? = nil) {
+    public init(key: String, title: String? = nil, publishDate: String? = nil, physicalFormat: String? = nil, isbn10: [String]? = nil) {
         self.key = key
         self.title = title
         self.publishDate = publishDate
         self.physicalFormat = physicalFormat
+        self.isbn10 = isbn10
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
@@ -29,6 +31,7 @@ public struct BookResult: Codable, JSONEncodable, Hashable {
         case title
         case publishDate = "publish_date"
         case physicalFormat = "physical_format"
+        case isbn10 = "isbn_10"
     }
 
     // Encodable protocol methods
@@ -39,6 +42,7 @@ public struct BookResult: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(title, forKey: .title)
         try container.encodeIfPresent(publishDate, forKey: .publishDate)
         try container.encodeIfPresent(physicalFormat, forKey: .physicalFormat)
+        try container.encodeIfPresent(isbn10, forKey: .isbn10)
     }
 }
 

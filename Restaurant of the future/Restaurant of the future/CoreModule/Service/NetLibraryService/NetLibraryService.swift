@@ -18,19 +18,22 @@ class NetLibraryService: NetLibraryServicing {
                 } else {
                     promise(.failure(error ?? ErrorInfo(errorMessage: "NetLibraryService getBooks: request failed")))
                     print("Error")
-                    print(error)
+                    print(error as Any)
                 }
             }
         }
     }
 
     func getBook(id: String) -> Future<BookResult, any Error> {
-        Future<BookResult, Error> { promise in
-            BooksAPI.booksGet(olid: id) { data, errorInfo in
+        OpenAPIClientAPI.customHeaders = ["accept" : "application/json"]
+        return Future<BookResult, Error> { promise in
+            BooksAPI.booksGet(olid: id) { data, error in
                 if let data = data {
                     promise(.success((data)))
                 } else {
-                    promise(.failure(errorInfo ?? ErrorInfo(errorMessage: "NetLibraryService getBook: request failed")))
+                    promise(.failure(error ?? ErrorInfo(errorMessage: "NetLibraryService getBook: request failed")))
+                    print("Error")
+                    print(error as Any)
                 }
             }
         }
