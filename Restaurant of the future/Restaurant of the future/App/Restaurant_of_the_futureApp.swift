@@ -20,15 +20,7 @@ struct Restaurant_of_the_futureApp: App {
         
         return modelContainer.mainContext
     }
-    
-    static var analiticServise: AnalyticsServicing {
-        AnalyticsService()
-    }
 
-    static var libraryService: NetLibraryServicing {
-        NetLibraryService()
-    }
-    
     static var router: Router {
         Router()
     }

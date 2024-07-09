@@ -9,7 +9,18 @@ import Foundation
 import Combine
 import NetLibrary
 
-class NetLibraryService: NetLibraryServicing {
+final class NetLibraryService: NetLibraryServicing & ServiceProtocol {
+    class var service: NetLibraryService {
+        if let service: NetLibraryService = ServiceLocator.service() {
+            return service
+        }
+
+        let service = NetLibraryService()
+        ServiceLocator.addService(service)
+        
+        return service
+    }
+
     func getBooks(_ cooking: TypeCooking, page: Int) -> Future<SearchResult, any Error> {
         Future<SearchResult, Error> { promise in
             SearchAPI.searchGet(q: cooking.rawValue, page: page) { data, error in

@@ -13,11 +13,11 @@ final class StoreHelper {
     }
     
     static func getMapStore(router: Router) -> MapStore {
-        MapStore(initialState: .init(), reducer: mapModuleReducer, environment: .init(router: router, analiticService: Restaurant_of_the_futureApp.analiticServise))
+        MapStore(initialState: .init(), reducer: mapModuleReducer, environment: .init(router: router, analiticService: AnalyticsService.service))
     }
     
     static func getMainViewModuleStore(router: Router) -> MainViewModuleStore {
-        MainViewModuleStore(initialState: .init(), reducer: mainViewModuleReducer, environment: .init(router: router, libraryService: Restaurant_of_the_futureApp.libraryService))
+        MainViewModuleStore(initialState: .init(), reducer: mainViewModuleReducer, environment: .init(router: router, libraryService: NetLibraryService.service))
     }
     
     @MainActor
@@ -33,6 +33,6 @@ final class StoreHelper {
     }
 
     static func getBooksInfoStore(router: Router, key: String) -> BooksInfoStore {
-        BooksInfoStore(initialState: .init(key: key), reducer: booksInfoReducer, environment: .init(router: router, libraryService: Restaurant_of_the_futureApp.libraryService))
+        BooksInfoStore(initialState: .init(key: key), reducer: booksInfoReducer, environment: .init(router: router, libraryService: NetLibraryService.service))
     }
 }
